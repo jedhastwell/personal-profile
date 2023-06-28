@@ -22,6 +22,8 @@ module.exports = {
       dropShadow: {
         orange: '3px 3px 0px #f9a31c',
         card: '5px 20px 40px rgba(0, 0, 0, 0.3)',
+        button: '0px 2px 3px rgba(0,0,0,0.2)',
+        'button-highlight': '0px 1px 5px rgba(0,0,0,0.3)',
       },
       borderRadius: {
         card: '20px',
