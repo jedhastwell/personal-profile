@@ -1,3 +1,4 @@
+import Card from '@/components/card'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -18,7 +19,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center bg-burnt-yellow dark:bg-zinc-700`}
       >
-        {children}
+        <Card>{children}</Card>
       </body>
     </html>
   )
