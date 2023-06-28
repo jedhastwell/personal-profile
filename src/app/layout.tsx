@@ -1,8 +1,6 @@
 import Card from '@/components/card'
 import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { faktPro } from './fonts'
 
 export const metadata = {
   title: 'Jed Hastwell',
@@ -17,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center bg-burnt-yellow dark:bg-zinc-700`}
+        className={`${faktPro.className} absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center bg-burnt-yellow dark:bg-zinc-700`}
       >
         <Card>{children}</Card>
       </body>
