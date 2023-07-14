@@ -2,16 +2,27 @@
 import Image from 'next/image'
 import { MouseEventHandler } from 'react'
 import iconic from '../../../public/iconic.svg'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function About() {
+  const router = useRouter()
+
   const handleLinkClick: MouseEventHandler<
     HTMLAnchorElement | HTMLButtonElement
   > = (e) => {
     e.stopPropagation()
   }
 
+  const handleCardClick: MouseEventHandler<HTMLDivElement> = () => {
+    router.push('/')
+  }
+
   return (
-    <div className="absolute flex h-full w-full flex-col overflow-hidden bg-white md:flex-row">
+    <div
+      className="absolute flex h-full w-full cursor-pointer flex-col overflow-hidden bg-white md:flex-row"
+      onClick={handleCardClick}
+    >
       <header className="relative h-[40%] w-full shrink-0 overflow-hidden sm:h-[44%] md:h-full md:w-[44%]">
         <Image
           className="relative right-0 top-[10%] m-auto block h-auto w-[62%] max-w-none sm:w-[70%] md:absolute md:right-[3%] md:top-[-15%] md:inline md:h-[126%] md:w-auto"
@@ -28,29 +39,29 @@ export default function About() {
         </h3>
         <p className="pt-4">
           Hi, I’m Jed. I’m Australian, but I live in Berlin. I{' '}
-          <a
+          <Link
             href="https://github.com/jedhastwell/"
             onClick={handleLinkClick}
             className="text-burnt-yellow hover:text-orange-yellow"
           >
             build things
-          </a>{' '}
+          </Link>{' '}
           with computers. Sometimes I{' '}
-          <a
+          <Link
             href="https://www.udemy.com/course/html5-game-development-2d-platform-game-fundamentals/?referralCode=13B8F31034B83AE36DAA"
             onClick={handleLinkClick}
             className="text-burnt-yellow hover:text-orange-yellow"
           >
             make videos{' '}
-          </a>{' '}
+          </Link>{' '}
           to teach people stuff. I’ve also been known to{' '}
-          <a
+          <Link
             href="https://flickr.com/photos/jedhastwell/"
             onClick={handleLinkClick}
             className="text-burnt-yellow hover:text-orange-yellow"
           >
             take photographs
-          </a>
+          </Link>
           .
         </p>
         <form action="mailto:jed@whistlefire.com" method="GET">
