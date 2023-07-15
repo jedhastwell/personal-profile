@@ -35,11 +35,10 @@ function Tiltable({
   }
 
   const handlePointerMove = useCallback(
-    (e: TouchEvent<HTMLDivElement> | MouseEvent<HTMLDivElement>) => {
+    (e: TouchEvent | MouseEvent) => {
       if (active) {
-        const { clientX, clientY } =
-          ('changedTouches' in e && e.changedTouches[0]) || e
-        const rect = e.currentTarget!.getBoundingClientRect()
+        const { clientX, clientY } = 'touches' in e ? e.changedTouches[0] : e
+        const rect = e.currentTarget.getBoundingClientRect()
 
         setPivot([
           (clientX - rect.x) / (rect.width / 2) - 1,
